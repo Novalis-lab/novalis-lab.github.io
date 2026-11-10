@@ -25,3 +25,21 @@
 ## 広告を入れるとき
 
 `index.html` の `<aside class="ad-slot">` の中に広告のコードを貼り、「広告スペース」の文字（`<span class="ad-placeholder">…</span>`）を消してください。
+
+## ロゴ・アイコンのファイル
+
+| ファイル | 使いみち |
+|---|---|
+| `icon.svg` | ブラウザのタブのアイコン（角丸） |
+| `favicon-32.png` | 古いブラウザ用のタブのアイコン |
+| `apple-touch-icon.png` | iPhoneのホーム画面のアイコン |
+| `icon-192.png` / `icon-512.png` | Androidのホーム画面のアイコン（`site.webmanifest` で指定） |
+| `logo-square.svg` | ロゴの元データ（四角・角なし） |
+
+ほかのツールのページでも、`<head>` に次の3行を入れると同じアイコンになります。
+
+```html
+<link rel="icon" href="https://yururi-tools.github.io/icon.svg" type="image/svg+xml">
+<link rel="icon" href="https://yururi-tools.github.io/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="https://yururi-tools.github.io/apple-touch-icon.png">
+```
