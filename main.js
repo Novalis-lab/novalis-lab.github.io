@@ -5,16 +5,23 @@
 (function () {
   "use strict";
 
+  document.documentElement.classList.add("js");
+
   const list = document.getElementById("tool-list");
 
-  TOOLS.forEach(function (tool) {
+  TOOLS.forEach(function (tool, i) {
     const li = document.createElement("li");
 
     // カード全体を1つのリンクにする（どこを押しても移動できる）
     const card = document.createElement("a");
     card.className = "tool-card";
     card.href = tool.url;
-    card.style.setProperty("--accent", tool.color || "#f6c453");
+    card.style.setProperty("--accent", tool.color || "#7c6cff");
+
+    const num = document.createElement("span");
+    num.className = "tool-num";
+    num.setAttribute("aria-hidden", "true");
+    num.textContent = String(i + 1).padStart(2, "0");
 
     const icon = document.createElement("span");
     icon.className = "tool-icon";
@@ -40,17 +47,46 @@
 
     const go = document.createElement("span");
     go.className = "tool-go";
-    go.textContent = "使ってみる →";
+    go.innerHTML = 'OPEN <span class="arrow" aria-hidden="true">→</span>';
 
     body.appendChild(name);
     body.appendChild(desc);
     body.appendChild(go);
+    card.appendChild(num);
     card.appendChild(icon);
     card.appendChild(body);
     li.appendChild(card);
     list.appendChild(li);
+
+    // マウスの位置を記録して、カードの光をついてこさせる
+    card.addEventListener("pointermove", function (e) {
+      const r = card.getBoundingClientRect();
+      card.style.setProperty("--mx", (e.clientX - r.left) + "px");
+      card.style.setProperty("--my", (e.clientY - r.top) + "px");
+    });
   });
 
-  document.getElementById("tool-count").textContent = "（" + TOOLS.length + "個）";
+  // スクロールして見えたカードを、順番にふわっと表示する
+  const cards = list.querySelectorAll(".tool-card");
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    cards.forEach(function (c, i) {
+      c.style.transitionDelay = (i * 80) + "ms";
+      io.observe(c);
+      // 表示し終わったら遅延を消して、ホバーの反応を速くする
+      c.addEventListener("transitionend", function () { c.style.transitionDelay = ""; }, { once: true });
+    });
+  } else {
+    cards.forEach(function (c) { c.classList.add("is-visible"); });
+  }
+
+  document.getElementById("tool-count").textContent = TOOLS.length + " ITEMS";
   document.getElementById("year").textContent = new Date().getFullYear();
 })();

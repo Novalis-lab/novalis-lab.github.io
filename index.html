@@ -5,25 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ゆるりツールズ｜ちょっと便利な、ゆるい道具箱</title>
   <meta name="description" content="ゆるりツールズは、暮らしのちょっとした「どっちがいい？」「どうしよう？」に役立つ無料Webツール集です。">
-  <meta name="theme-color" content="#fff8ee">
+  <meta name="theme-color" content="#07080f">
   <!-- フォント（Google Fonts・無料） -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-    <p class="logo-mark" aria-hidden="true">🧺</p>
-    <h1 class="site-name">ゆるりツールズ</h1>
-    <p class="tagline">ちょっと便利な、ゆるい道具箱</p>
+  <!-- 背景のオーロラと格子（飾り） -->
+  <div class="bg" aria-hidden="true">
+    <span class="orb orb-1"></span>
+    <span class="orb orb-2"></span>
+    <span class="orb orb-3"></span>
+    <span class="grid"></span>
+  </div>
+
+  <header class="hero">
+    <p class="hero-label"><span class="dot"></span>FREE WEB TOOLS</p>
+    <h1 class="hero-title">
+      <span class="hero-en" aria-hidden="true">YURURI<br>TOOLS</span>
+      <span class="hero-ja">ゆるりツールズ</span>
+    </h1>
+    <p class="hero-lead">暮らしの「どっちがいい？」「どうしよう？」を<br class="br-sp">さくっと解決する、ゆるい道具箱。</p>
+    <a class="hero-cta" href="#tools">ツールを見る<span aria-hidden="true">↓</span></a>
   </header>
 
-  <main class="container">
+  <main class="container" id="tools">
     <section aria-labelledby="tools-heading">
-      <h2 id="tools-heading" class="section-title">
-        ツール一覧 <span id="tool-count" class="count"></span>
-      </h2>
+      <div class="section-head">
+        <h2 id="tools-heading" class="section-title">
+          <span class="section-en" aria-hidden="true">TOOLS</span>
+          ツール一覧
+        </h2>
+        <span id="tool-count" class="count"></span>
+      </div>
 
       <!-- ツールのカードは tools.js の内容から自動で作られます -->
       <ul id="tool-list" class="tool-list"></ul>
@@ -36,7 +52,7 @@
         </ul>
       </noscript>
 
-      <p class="coming-soon">これからもツールを増やしていきます 🌱</p>
+      <p class="coming-soon"><span class="pulse" aria-hidden="true"></span>これからもツールを増やしていきます</p>
     </section>
 
     <!-- 広告スペース：将来ここに広告のコードを貼り付けます -->
@@ -47,6 +63,7 @@
   </main>
 
   <footer class="site-footer">
+    <p class="footer-logo" aria-hidden="true">YURURI TOOLS</p>
     <p>© <span id="year"></span> ゆるりツールズ</p>
   </footer>
 
