@@ -20,6 +20,14 @@
 
 const TOOLS = [
   {
+    name: "くらしの単位変換",
+    description: "大さじ・小さじ・カップをグラムに、坪・畳・㎡を相互に、合・升・尺・寸などの昔の単位も。数字を入れるだけですぐ変換できます。",
+    url: "https://novalis-lab.github.io/unit-converter/",
+    emoji: "⚖️",
+    color: "#5cb88a",
+    isNew: true,
+  },
+  {
     name: "高速と下道の費用比較",
     description: "高速道路と下道、どっちが得？ 距離・時間・高速料金・燃費から総費用を計算して、「1時間あたりいくらで時間を買っているか」までわかります。",
     url: "https://novalis-lab.github.io/highway-cost/",
