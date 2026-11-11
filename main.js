@@ -14,9 +14,9 @@
 
     // カード全体を1つのリンクにする（どこを押しても移動できる）
     const card = document.createElement("a");
-    card.className = "tool-card";
+    card.className = "tool-card reveal";
     card.href = tool.url;
-    card.style.setProperty("--accent", tool.color || "#7c6cff");
+    if (tool.color) card.style.setProperty("--tool", tool.color);
 
     const num = document.createElement("span");
     num.className = "tool-num";
@@ -47,44 +47,37 @@
 
     const go = document.createElement("span");
     go.className = "tool-go";
-    go.innerHTML = 'OPEN <span class="arrow" aria-hidden="true">→</span>';
+    go.setAttribute("aria-hidden", "true");
+    go.innerHTML = "<span>→</span>";
 
     body.appendChild(name);
     body.appendChild(desc);
-    body.appendChild(go);
     card.appendChild(num);
     card.appendChild(icon);
     card.appendChild(body);
+    card.appendChild(go);
     li.appendChild(card);
     list.appendChild(li);
-
-    // マウスの位置を記録して、カードの光をついてこさせる
-    card.addEventListener("pointermove", function (e) {
-      const r = card.getBoundingClientRect();
-      card.style.setProperty("--mx", (e.clientX - r.left) + "px");
-      card.style.setProperty("--my", (e.clientY - r.top) + "px");
-    });
   });
 
-  // スクロールして見えたカードを、順番にふわっと表示する
-  const cards = list.querySelectorAll(".tool-card");
+  // スクロールして見えた要素を、順番にふわっと表示する
+  const items = document.querySelectorAll(".reveal");
   if ("IntersectionObserver" in window) {
     const io = new IntersectionObserver(function (entries) {
+      let n = 0;
       entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          io.unobserve(entry.target);
-        }
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        el.style.transitionDelay = (n++ * 90) + "ms";
+        el.classList.add("is-visible");
+        io.unobserve(el);
+        // 表示し終わったら遅延を消して、ホバーの反応を速くする
+        setTimeout(function () { el.style.transitionDelay = ""; }, 1200);
       });
-    }, { threshold: 0.15 });
-    cards.forEach(function (c, i) {
-      c.style.transitionDelay = (i * 80) + "ms";
-      io.observe(c);
-      // 表示し終わったら遅延を消して、ホバーの反応を速くする
-      c.addEventListener("transitionend", function () { c.style.transitionDelay = ""; }, { once: true });
-    });
+    }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+    items.forEach(function (el) { io.observe(el); });
   } else {
-    cards.forEach(function (c) { c.classList.add("is-visible"); });
+    items.forEach(function (el) { el.classList.add("is-visible"); });
   }
 
   document.getElementById("tool-count").textContent = TOOLS.length + " ITEMS";

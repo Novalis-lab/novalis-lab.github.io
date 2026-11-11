@@ -6,7 +6,7 @@
   <title>novalis｜暮らしの「どっちがいい？」を解決する無料Webツール集</title>
   <meta name="description" content="高速と下道の料金比較、予算内のランチメニュー決めスロットなど、暮らしのちょっとした「どっちがいい？」「どうしよう？」をさくっと解決する無料Webツール集。登録不要、スマホでもすぐ使えます。">
   <link rel="canonical" href="https://novalis-lab.github.io/">
-  <meta name="theme-color" content="#07080f">
+  <meta name="theme-color" content="#0b0b0d">
   <!-- LINEやXでシェアしたときの表示 -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="novalis">
@@ -40,30 +40,59 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=20261111">
 </head>
 <body>
-  <!-- 背景のオーロラと格子（飾り） -->
+  <!-- 背景の飾り（縦のガイド線と斜めのライン） -->
   <div class="bg" aria-hidden="true">
-    <span class="orb orb-1"></span>
-    <span class="orb orb-2"></span>
-    <span class="orb orb-3"></span>
-    <span class="grid"></span>
+    <span class="bg-cols"></span>
+    <span class="bg-slash"></span>
   </div>
 
-  <header class="hero">
-    <p class="hero-label"><span class="dot"></span>FREE WEB TOOLS</p>
-    <h1 class="hero-title">
-      <span class="hero-en" aria-hidden="true">NOVALIS</span>
-      <span class="hero-ja">ノヴァリス</span>
-    </h1>
-    <p class="hero-lead">暮らしの「どっちがいい？」「どうしよう？」を<br class="br-sp">さくっと解決する、ゆるい道具箱。</p>
-    <a class="hero-cta" href="#tools">ツールを見る<span aria-hidden="true">↓</span></a>
-  </header>
+  <div class="inner">
+    <div class="topbar">
+      <a class="logo" href="/"><span class="logo-mark" aria-hidden="true"></span>NOVALIS</a>
+      <div class="topbar-meta">
+        <span class="hide-sp">FREE WEB TOOLS</span>
+        <span class="live">ONLINE</span>
+      </div>
+    </div>
 
-  <main class="container" id="tools">
-    <section aria-labelledby="tools-heading">
-      <div class="section-head">
+    <header class="hero">
+      <p class="hero-kicker">SMALL TOOLS FOR EVERYDAY LIFE</p>
+      <h1 class="hero-title">
+        <span class="hero-en" aria-hidden="true">
+          <span class="line line-1"><span>N<i class="o"></i>VA</span></span>
+          <span class="line line-2"><span class="outline">LIS</span></span>
+        </span>
+        <span class="hero-ja-name">ノヴァリス</span>
+      </h1>
+      <div class="hero-grid">
+        <p class="hero-copy reveal">暮らしの<em>「どっちがいい？」</em><br><em>「どうしよう？」</em>を<br>さくっと解決する。</p>
+        <div class="hero-side reveal">
+          <p class="hero-lead">登録不要・無料で使える、ゆるい道具箱。<br>スマホを開いて、数字を入れるだけ。</p>
+          <a class="hero-cta" href="#tools">ツールを見る<span class="arrow" aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <!-- 斜めに流れる帯（飾り） -->
+  <div class="ticker-wrap" aria-hidden="true">
+    <div class="ticker">
+      <div class="ticker-track">
+        <span>FREE WEB TOOLS</span><span>NO SIGN-UP</span><span>MOBILE READY</span><span>NOVALIS</span>
+        <span>FREE WEB TOOLS</span><span>NO SIGN-UP</span><span>MOBILE READY</span><span>NOVALIS</span>
+        <span>FREE WEB TOOLS</span><span>NO SIGN-UP</span><span>MOBILE READY</span><span>NOVALIS</span>
+        <span>FREE WEB TOOLS</span><span>NO SIGN-UP</span><span>MOBILE READY</span><span>NOVALIS</span>
+      </div>
+    </div>
+  </div>
+
+  <main class="inner">
+    <section class="section" id="tools" aria-labelledby="tools-heading">
+      <div class="section-head reveal">
+        <span class="section-no" aria-hidden="true">01 /</span>
         <h2 id="tools-heading" class="section-title">
           <span class="section-en" aria-hidden="true">TOOLS</span>
           ツール一覧
@@ -86,6 +115,22 @@
       <p class="coming-soon"><span class="pulse" aria-hidden="true"></span>これからもツールを増やしていきます</p>
     </section>
 
+    <section class="section" aria-labelledby="about-heading">
+      <div class="section-head reveal">
+        <span class="section-no" aria-hidden="true">02 /</span>
+        <h2 id="about-heading" class="section-title">
+          <span class="section-en" aria-hidden="true">ABOUT</span>
+          novalis について
+        </h2>
+        <span class="count" aria-hidden="true">3 POINTS</span>
+      </div>
+      <ul class="features">
+        <li class="reveal"><span class="feature-no">— 01</span><span class="feature-title">登録不要</span><span class="feature-text">アカウントもログインもいりません。開いたらすぐ使えます。</span></li>
+        <li class="reveal"><span class="feature-no">— 02</span><span class="feature-title">ずっと無料</span><span class="feature-text">どのツールも無料。気軽にブックマークしておいてください。</span></li>
+        <li class="reveal"><span class="feature-no">— 03</span><span class="feature-title">スマホで快適</span><span class="feature-text">片手で操作しやすい、大きめの文字とボタンで作っています。</span></li>
+      </ul>
+    </section>
+
     <!-- 広告スペース：将来ここに広告のコードを貼り付けます -->
     <aside class="ad-slot" aria-label="広告">
       <!-- 例：Google AdSense のコードをこの中に貼る -->
@@ -94,12 +139,15 @@
   </main>
 
   <footer class="site-footer">
+    <div class="inner footer-row">
+      <p>© <span id="year"></span> NOVALIS</p>
+      <a href="#top" onclick="window.scrollTo({top:0});return false;">BACK TO TOP ↑</a>
+    </div>
     <p class="footer-logo" aria-hidden="true">NOVALIS</p>
-    <p>© <span id="year"></span> novalis</p>
   </footer>
 
   <!-- ツールの一覧を先に読み込み、そのあとカードを作るプログラムを読み込みます -->
-  <script src="tools.js"></script>
-  <script src="main.js"></script>
+  <script src="tools.js?v=20261111"></script>
+  <script src="main.js?v=20261111"></script>
 </body>
 </html>
