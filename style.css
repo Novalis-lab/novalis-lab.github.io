@@ -7,7 +7,7 @@
   --text: #f2f0ea;        /* 文字（少しあたたかい白） */
   --muted: #8b8a86;       /* 薄い文字 */
   --line: rgba(255, 255, 255, 0.12);
-  --accent: #6f9fd4;      /* 差し色（落ち着いた青）※ここを変えると全体の差し色が変わる（ボタンの光 .hero-cta の色も合わせて変える） */
+  --accent: #6f9fd4;      /* 差し色（落ち着いた青）※ここを変えると全体の差し色が変わる（ボタンと帯の光 .hero-cta / .ticker の色も合わせて変える） */
   --accent-ink: #0b0b0d;  /* 差し色の上に乗る文字の色 */
   --font: "Zen Kaku Gothic New", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", Meiryo, sans-serif;
   --font-en: "Unbounded", "Zen Kaku Gothic New", sans-serif;
@@ -209,7 +209,7 @@ a { color: inherit; }
 .hero-cta:hover .arrow { transform: translateY(3px); }
 
 /* ---------- 斜めに流れる帯 ---------- */
-.ticker-wrap { position: relative; padding: 36px 0; overflow: hidden; }
+.ticker-wrap { position: relative; padding: 56px 0; overflow: hidden; overflow-x: clip; overflow-y: visible; } /* 横だけ切り、上下は光がはみ出せるように */
 .ticker-wrap::before {
   /* 帯の後ろに、逆向きの細い線を交差させる */
   content: "";
@@ -231,6 +231,20 @@ a { color: inherit; }
   transform: rotate(-2.5deg);
   overflow: hidden;
   white-space: nowrap;
+  /* 帯もボタンと同じリズムでやわらかく光る */
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.25) inset,
+    0 0 20px 2px rgba(111, 159, 212, 0.5),
+    0 0 54px 8px rgba(111, 159, 212, 0.25);
+  animation: glow-band 2.8s ease-in-out infinite;
+}
+@keyframes glow-band {
+  50% {
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.35) inset,
+      0 0 28px 4px rgba(111, 159, 212, 0.7),
+      0 0 76px 14px rgba(111, 159, 212, 0.35);
+  }
 }
 .ticker-track { display: inline-flex; animation: marquee 30s linear infinite; }
 .ticker-track span {
