@@ -7,7 +7,7 @@
  *    {
  *      name: "ツールの名前",
  *      description: "何ができるかの短い説明",
- *      url: "https://yururi-tools.github.io/リポジトリ名/",
+ *      url: "https://novalis-lab.github.io/リポジトリ名/",
  *      emoji: "🔧",          // カードに出る絵文字
  *      color: "#f6c453",     // カードのアクセント色
  *      isNew: true,          // 「NEW」マークをつけたいとき（いらなければこの行ごと消す）
@@ -22,14 +22,14 @@ const TOOLS = [
   {
     name: "高速と下道の費用比較",
     description: "高速道路と下道、どっちが得？ 距離・時間・高速料金・燃費から総費用を計算して、「1時間あたりいくらで時間を買っているか」までわかります。",
-    url: "https://yururi-tools.github.io/highway-cost/",
+    url: "https://novalis-lab.github.io/highway-cost/",
     emoji: "🚗",
     color: "#5aa9e6",
   },
   {
     name: "サイ⚪︎スロット",
     description: "予算を入れてスロットを回すと、予算内で食べられるサイ○リヤのメニューの組み合わせがランダムで出てきます。今日なに食べるか迷ったときに。",
-    url: "https://yururi-tools.github.io/sai-slot/",
+    url: "https://novalis-lab.github.io/sai-slot/",
     emoji: "🎰",
     color: "#e8645a",
   },

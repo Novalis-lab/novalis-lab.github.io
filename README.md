@@ -1,8 +1,8 @@
-# ゆるりツールズ
+# novalis
 
 ちょっと便利な、ゆるい道具箱。無料Webツール集のトップページです。
 
-公開URL：https://yururi-tools.github.io/
+公開URL：https://novalis-lab.github.io/
 
 ## ファイルの役割
 
@@ -39,7 +39,7 @@
 ほかのツールのページでも、`<head>` に次の3行を入れると同じアイコンになります。
 
 ```html
-<link rel="icon" href="https://yururi-tools.github.io/icon.svg" type="image/svg+xml">
-<link rel="icon" href="https://yururi-tools.github.io/favicon-32.png" sizes="32x32" type="image/png">
-<link rel="apple-touch-icon" href="https://yururi-tools.github.io/apple-touch-icon.png">
+<link rel="icon" href="https://novalis-lab.github.io/icon.svg" type="image/svg+xml">
+<link rel="icon" href="https://novalis-lab.github.io/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="https://novalis-lab.github.io/apple-touch-icon.png">
 ```
