@@ -7,7 +7,7 @@
   --text: #f2f0ea;        /* 文字（少しあたたかい白） */
   --muted: #8b8a86;       /* 薄い文字 */
   --line: rgba(255, 255, 255, 0.12);
-  --accent: #ff8a7a;      /* 差し色（コーラルピンク）※ここを変えると全体の差し色が変わる */
+  --accent: #6aaeff;      /* 差し色（スカイブルー）※ここを変えると全体の差し色が変わる */
   --accent-ink: #0b0b0d;  /* 差し色の上に乗る文字の色 */
   --font: "Zen Kaku Gothic New", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", Meiryo, sans-serif;
   --font-en: "Unbounded", "Zen Kaku Gothic New", sans-serif;
@@ -371,8 +371,8 @@ noscript .tool-card { display: block; padding: 20px 0; font-weight: 700; }
 }
 .pulse { width: 8px; height: 8px; background: var(--accent); animation: pulse 2s ease-out infinite; }
 @keyframes pulse {
-  0%   { box-shadow: 0 0 0 0 rgba(255, 138, 122, 0.5); }
-  100% { box-shadow: 0 0 0 12px rgba(255, 138, 122, 0); }
+  0%   { box-shadow: 0 0 0 0 rgba(106, 174, 255, 0.5); }
+  100% { box-shadow: 0 0 0 12px rgba(106, 174, 255, 0); }
 }
 
 /* ---------- 特徴（3つ並び） ---------- */
