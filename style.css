@@ -9,8 +9,8 @@
   --line: rgba(255, 255, 255, 0.12);
   --accent: #6f9fd4;      /* 差し色（落ち着いた青）※ここを変えると全体の差し色が変わる（ボタンと帯の光 .hero-cta / .ticker の色も合わせて変える） */
   --accent-ink: #0b0b0d;  /* 差し色の上に乗る文字の色 */
-  --font: "Zen Kaku Gothic New", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", Meiryo, sans-serif;
-  --font-en: "Unbounded", "Zen Kaku Gothic New", sans-serif;
+  /* 日本語フォント --font と角の丸み --radius は common.css で共通管理 */
+  --font-en: "Unbounded", "Zen Maru Gothic", sans-serif;   /* 英字ロゴ（NOVALIS）用 */
   --gutter: clamp(16px, 4vw, 40px);
   --max: 1120px;
 }
@@ -603,6 +603,15 @@ noscript .tool-card { display: block; padding: 20px 0; font-weight: 700; }
   .section-head { grid-template-columns: 1fr auto; }
   .section-no { grid-column: 1 / -1; padding-bottom: 0; }
 }
+
+/* ---------- 角の丸み（common.css の --radius で一括管理） ---------- */
+.hero-cta,
+.tool-card,
+.tool-card::before,
+.tool-icon,
+.tool-go,
+.ad-slot { border-radius: var(--radius, 8px); }
+.badge-new { border-radius: calc(var(--radius, 8px) / 2); }
 
 /* 動きを減らす設定の人には、アニメーションを止める */
 @media (prefers-reduced-motion: reduce) {

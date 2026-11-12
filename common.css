@@ -1,0 +1,20 @@
+/* ============================================================
+   novalis 共通CSS（トップページと各ツールで読み込む）
+   https://novalis-lab.github.io/common.css
+
+   ・日本語のフォントと角の丸みを、ここ1か所で管理します
+   ・ここを変えて公開すると、読み込んでいる全ページに反映されます
+     （各ページの common.css?v=〇〇 の数字も変えると、確実に新しい内容になります）
+   ・英字ロゴ（NOVALIS）のフォント --font-en は各ページ側で指定しています
+   ============================================================ */
+
+/* 日本語フォント：Zen Maru Gothic（Google Fonts・無料） */
+@import url("https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap");
+
+:root {
+  /* 日本語の見出し・本文のフォント */
+  --font: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", "Hiragino Sans", "Yu Gothic", "Noto Sans JP", Meiryo, sans-serif;
+
+  /* ボタンやカードの角の丸み */
+  --radius: 8px;
+}
