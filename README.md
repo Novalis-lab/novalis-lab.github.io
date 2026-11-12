@@ -45,24 +45,33 @@
 
 `index.html` の `<aside class="ad-slot">` の中に広告のコードを貼り、「広告スペース」の文字（`<span class="ad-placeholder">…</span>`）を消してください。
 
-## ロゴ・アイコンのファイル
+## ロゴ・アイコンのファイル（元データ 1 つで全リポジトリに反映）
+
+**元データは `logo-square.svg` の 1 つだけ**です。ここを直して、次の 2 ステップで全ツールのアイコンが変わります。
+
+1. このフォルダで `python3 tools/make_icons.py` を実行する（Mac 専用。元データから下の表のファイルを全部作り直します）
+2. このリポジトリを GitHub に反映（commit・push）する
+
+各ツール（unit-converter・highway-cost・si-converter・date-calc・sai-slot）は、
+`https://novalis-lab.github.io/` にあるアイコンを読み込んでいるので、**ほかのリポジトリは何も直さなくてOK**です。
+（GitHub Pages は 10 分ほどでファイルを読み直させるので、少し待つと各ページに反映されます。iPhone のホーム画面に登録したアイコンだけは、登録し直すまで変わりません）
 
 デザイン：ほぼ黒の背景に、太い白の **「N」** と、上のバーのロゴと同じ **青く光るひし形（◆）**。「N」の右の縦棒には、トップページのロゴ「VA」と同じ向きの斜めの切り込み線。右上に背景と同じ斜線。
 
-| ファイル | 使いみち |
-|---|---|
-| `icon.svg` | ブラウザのタブのアイコン（角丸・角は透明） |
-| `logo-square.svg` | ロゴの元データ（四角・角なし）。下の PNG はすべてこれから作っています |
-| `favicon-32.png` | 古いブラウザ用のタブのアイコン |
-| `apple-touch-icon.png` | iPhoneのホーム画面のアイコン（角はiPhoneが自動で丸める） |
-| `icon-192.png` / `icon-512.png` | Androidのホーム画面のアイコン（`site.webmanifest` で指定） |
+| ファイル | 使いみち | 編集 |
+|---|---|---|
+| `logo-square.svg` | **元データ**（四角・角なし） | ここだけ直す |
+| `icon.svg` | ブラウザのタブのアイコン（角丸）・サイ⚪︎スロットの上のバーのロゴ | 自動で作られる |
+| `favicon-32.png` | 古いブラウザ用のタブのアイコン | 自動で作られる |
+| `apple-touch-icon.png` | iPhoneのホーム画面のアイコン（角はiPhoneが自動で丸める） | 自動で作られる |
+| `icon-192.png` / `icon-512.png` | Androidのホーム画面のアイコン（`site.webmanifest` で指定） | 自動で作られる |
 
-アイコンを作り直したときは、各ページの `icon.svg?v=〇〇` などの数字も新しくすると、ブラウザに残った古いアイコンが入れ替わります。
+※ LINE や X のシェア画像（`ogp.png` など）と、デスクトップの GitHub プロフィール画像は、アイコンとは別の画像なので自動では変わりません。
 
-ほかのツールのページでも、`<head>` に次の3行を入れると同じアイコンになります。
+新しいツールのページでも、`<head>` に次の3行を入れると同じアイコンになります（数字の `?v=` は付けない）。
 
 ```html
-<link rel="icon" href="https://novalis-lab.github.io/icon.svg?v=20261113bb" type="image/svg+xml">
-<link rel="icon" href="https://novalis-lab.github.io/favicon-32.png?v=20261113bb" sizes="32x32" type="image/png">
-<link rel="apple-touch-icon" href="https://novalis-lab.github.io/apple-touch-icon.png?v=20261113bb">
+<link rel="icon" href="https://novalis-lab.github.io/icon.svg" type="image/svg+xml">
+<link rel="icon" href="https://novalis-lab.github.io/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="https://novalis-lab.github.io/apple-touch-icon.png">
 ```
