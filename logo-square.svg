@@ -1,5 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <!-- novalis ロゴの元データ（四角・角なし）：iPhone のホーム画面アイコンなど、角丸を自動でつける場所用 -->
+  <!-- novalis ロゴの元データ（四角・角なし）：太い「N」＋青く光るひし形（上のバーのロゴ ◆）＋斜めの切り込み線
+       iPhone のホーム画面アイコンなど、角丸を自動でつける場所や PNG の元に使う -->
   <defs>
     <pattern id="slash" width="22" height="22" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
       <rect width="3" height="22" fill="#ffffff" fill-opacity="0.1"/>
@@ -9,13 +10,26 @@
       <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
     </linearGradient>
     <mask id="m"><rect width="512" height="512" fill="url(#fade)"/></mask>
-    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="18"/></filter>
-    <filter id="glow-dot" x="-200%" y="-200%" width="500%" height="500%"><feGaussianBlur stdDeviation="10"/></filter>
+    <!-- 「N」の右の縦棒の上のほうに入れる斜めの切り込み（トップページのロゴ「VA」・背景の斜線と同じ向き） -->
+    <mask id="cut">
+      <rect width="512" height="512" fill="#ffffff"/>
+      <polygon points="318,234 398,120 398,132 318,246" fill="#000000"/>
+      <polygon points="318,266 398,152 398,164 318,278" fill="#000000"/>
+      <polygon points="318,298 398,184 398,196 318,310" fill="#000000"/>
+    </mask>
+    <filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="14"/></filter>
   </defs>
   <rect width="512" height="512" fill="#0b0b0d"/>
   <rect width="512" height="512" fill="url(#slash)" mask="url(#m)"/>
-  <circle cx="256" cy="256" r="134" fill="none" stroke="#6f9fd4" stroke-width="60" opacity="0.55" filter="url(#glow)"/>
-  <circle cx="256" cy="256" r="134" fill="none" stroke="#6f9fd4" stroke-width="60"/>
-  <circle cx="161.2" cy="161.2" r="30" fill="#ffffff" opacity="0.8" filter="url(#glow-dot)"/>
-  <circle cx="161.2" cy="161.2" r="21" fill="#ffffff"/>
+  <!-- 太い「N」 -->
+  <g fill="#f2f0ea" mask="url(#cut)">
+    <rect x="118" y="150" width="76" height="250"/>
+    <rect x="318" y="150" width="76" height="250"/>
+    <polygon points="118,150 194,150 394,400 318,400"/>
+  </g>
+  <!-- 青く光るひし形（上のバーのロゴ ◆） -->
+  <g transform="rotate(45 404 112)">
+    <rect x="374" y="82" width="60" height="60" fill="#6f9fd4" opacity="0.7" filter="url(#glow)"/>
+    <rect x="374" y="82" width="60" height="60" fill="#6f9fd4"/>
+  </g>
 </svg>

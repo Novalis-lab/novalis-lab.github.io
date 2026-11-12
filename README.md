@@ -47,7 +47,7 @@
 
 ## ロゴ・アイコンのファイル
 
-デザイン：ほぼ黒の背景に、トップページのロゴの「O」と同じ **青く光るリング** と、まわりを回る **白い光の粒**。右上に背景と同じ斜線。
+デザイン：ほぼ黒の背景に、太い白の **「N」** と、上のバーのロゴと同じ **青く光るひし形（◆）**。「N」の右の縦棒には、トップページのロゴ「VA」と同じ向きの斜めの切り込み線。右上に背景と同じ斜線。
 
 | ファイル | 使いみち |
 |---|---|
@@ -62,7 +62,7 @@
 ほかのツールのページでも、`<head>` に次の3行を入れると同じアイコンになります。
 
 ```html
-<link rel="icon" href="https://novalis-lab.github.io/icon.svg?v=20261113" type="image/svg+xml">
-<link rel="icon" href="https://novalis-lab.github.io/favicon-32.png?v=20261113" sizes="32x32" type="image/png">
-<link rel="apple-touch-icon" href="https://novalis-lab.github.io/apple-touch-icon.png?v=20261113">
+<link rel="icon" href="https://novalis-lab.github.io/icon.svg?v=20261113bb" type="image/svg+xml">
+<link rel="icon" href="https://novalis-lab.github.io/favicon-32.png?v=20261113bb" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="https://novalis-lab.github.io/apple-touch-icon.png?v=20261113bb">
 ```
