@@ -20,6 +20,14 @@
 
 const TOOLS = [
   {
+    name: "SI単位変換ノート",
+    description: "圧力・温度・熱量・力・仕事率・体積・密度・接頭語を変換。結果といっしょに「計算の途中」も出るので、勉強や資格試験の確認に。",
+    url: "https://novalis-lab.github.io/si-converter/",
+    emoji: "📐",
+    color: "#8fb6e2",
+    isNew: true,
+  },
+  {
     name: "くらしの単位変換",
     description: "大さじ・小さじ・カップをグラムに、坪・畳・㎡を相互に、合・升・尺・寸などの昔の単位も。数字を入れるだけですぐ変換できます。",
     url: "https://novalis-lab.github.io/unit-converter/",
