@@ -32,9 +32,19 @@ const CATEGORIES = [
   { id: "calc",   name: "計算・変換",     en: "CALCULATE" },
   { id: "money",  name: "おでかけ・お金", en: "MONEY & TRAVEL" },
   { id: "fun",    name: "ごはん・あそび", en: "FOOD & FUN" },
+  { id: "design", name: "デザイン・つくる", en: "DESIGN" },
 ];
 
 const TOOLS = [
+  {
+    name: "色の組み合わせ提案",
+    description: "1色えらぶだけで、補色・類似色など6種類の組み合わせから5色の配色を提案。タップで色コードをコピー、見本と文字の読みやすさのチェックつき。",
+    url: "https://novalis-lab.github.io/color-palette/",
+    category: "design",
+    emoji: "🎨",
+    color: "#f783ac",
+    isNew: true,
+  },
   {
     name: "今日の晩ごはんルーレット",
     description: "献立に迷ったら回すだけ。和食・洋食・中華などジャンルを選んだり、家の定番メニューを入れたりして、今日の晩ごはんをルーレットで決めます。",
