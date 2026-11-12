@@ -1,28 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- novalis ロゴの元データ（四角・角なし）：iPhone のホーム画面アイコンなど、角丸を自動でつける場所用 -->
   <defs>
-    <linearGradient id="g" gradientUnits="userSpaceOnUse" x1="150" y1="110" x2="380" y2="400">
-      <stop offset="0" stop-color="#22d3ee"/>
-      <stop offset="0.55" stop-color="#7c6cff"/>
-      <stop offset="1" stop-color="#ff5ea8"/>
+    <pattern id="slash" width="22" height="22" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
+      <rect width="3" height="22" fill="#ffffff" fill-opacity="0.1"/>
+    </pattern>
+    <linearGradient id="fade" x1="1" y1="0" x2="0.3" y2="0.7">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
     </linearGradient>
-    <radialGradient id="a" cx="0.2" cy="0.15" r="0.75">
-      <stop offset="0" stop-color="#7c6cff" stop-opacity="0.55"/>
-      <stop offset="1" stop-color="#7c6cff" stop-opacity="0"/>
-    </radialGradient>
-    <radialGradient id="b" cx="0.9" cy="0.9" r="0.6">
-      <stop offset="0" stop-color="#ff5ea8" stop-opacity="0.35"/>
-      <stop offset="1" stop-color="#ff5ea8" stop-opacity="0"/>
-    </radialGradient>
-    <radialGradient id="s" cx="0.5" cy="0.5" r="0.5">
-      <stop offset="0" stop-color="#ffffff" stop-opacity="0.9"/>
-      <stop offset="0.35" stop-color="#22d3ee" stop-opacity="0.35"/>
-      <stop offset="1" stop-color="#22d3ee" stop-opacity="0"/>
-    </radialGradient>
+    <mask id="m"><rect width="512" height="512" fill="url(#fade)"/></mask>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="18"/></filter>
+    <filter id="glow-dot" x="-200%" y="-200%" width="500%" height="500%"><feGaussianBlur stdDeviation="10"/></filter>
   </defs>
-  <rect width="512" height="512" rx="0" fill="#0b0c18"/>
-  <rect width="512" height="512" rx="0" fill="url(#a)"/>
-  <rect width="512" height="512" rx="0" fill="url(#b)"/>
-  <circle cx="352" cy="146" r="92" fill="url(#s)"/>
-  <path d="M164 370 V158 L348 362 V254" fill="none" stroke="url(#g)" stroke-width="58" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M352 82 C358 124 370 136 412 146 C370 156 358 168 352 210 C346 168 334 156 292 146 C334 136 346 124 352 82 Z" fill="#ffffff"/>
+  <rect width="512" height="512" fill="#0b0b0d"/>
+  <rect width="512" height="512" fill="url(#slash)" mask="url(#m)"/>
+  <circle cx="256" cy="256" r="134" fill="none" stroke="#6f9fd4" stroke-width="60" opacity="0.55" filter="url(#glow)"/>
+  <circle cx="256" cy="256" r="134" fill="none" stroke="#6f9fd4" stroke-width="60"/>
+  <circle cx="161.2" cy="161.2" r="30" fill="#ffffff" opacity="0.8" filter="url(#glow-dot)"/>
+  <circle cx="161.2" cy="161.2" r="21" fill="#ffffff"/>
 </svg>

@@ -47,18 +47,22 @@
 
 ## ロゴ・アイコンのファイル
 
+デザイン：ほぼ黒の背景に、トップページのロゴの「O」と同じ **青く光るリング** と、まわりを回る **白い光の粒**。右上に背景と同じ斜線。
+
 | ファイル | 使いみち |
 |---|---|
-| `icon.svg` | ブラウザのタブのアイコン（角丸） |
+| `icon.svg` | ブラウザのタブのアイコン（角丸・角は透明） |
+| `logo-square.svg` | ロゴの元データ（四角・角なし）。下の PNG はすべてこれから作っています |
 | `favicon-32.png` | 古いブラウザ用のタブのアイコン |
-| `apple-touch-icon.png` | iPhoneのホーム画面のアイコン |
+| `apple-touch-icon.png` | iPhoneのホーム画面のアイコン（角はiPhoneが自動で丸める） |
 | `icon-192.png` / `icon-512.png` | Androidのホーム画面のアイコン（`site.webmanifest` で指定） |
-| `logo-square.svg` | ロゴの元データ（四角・角なし） |
+
+アイコンを作り直したときは、各ページの `icon.svg?v=〇〇` などの数字も新しくすると、ブラウザに残った古いアイコンが入れ替わります。
 
 ほかのツールのページでも、`<head>` に次の3行を入れると同じアイコンになります。
 
 ```html
-<link rel="icon" href="https://novalis-lab.github.io/icon.svg" type="image/svg+xml">
-<link rel="icon" href="https://novalis-lab.github.io/favicon-32.png" sizes="32x32" type="image/png">
-<link rel="apple-touch-icon" href="https://novalis-lab.github.io/apple-touch-icon.png">
+<link rel="icon" href="https://novalis-lab.github.io/icon.svg?v=20261113" type="image/svg+xml">
+<link rel="icon" href="https://novalis-lab.github.io/favicon-32.png?v=20261113" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="https://novalis-lab.github.io/apple-touch-icon.png?v=20261113">
 ```
