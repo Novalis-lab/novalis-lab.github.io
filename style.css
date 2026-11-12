@@ -125,27 +125,33 @@ a { color: inherit; }
   animation: flow 7s linear infinite;
 }
 @keyframes flow { to { background-position: -200% 0; } }
-/* 「VA」の中を、青く光る斜めの線が右上から左下へ通り抜ける */
+/* 「VA」に右上から黒い実線（背景色）を数本入れて、文字を切り込んだように見せる */
 .hero-en .va {
-  color: transparent;
-  background: linear-gradient(45deg,
-    var(--text) 0 43%,
-    #ffffff 46%,
-    var(--accent) 48.5%,
-    var(--accent) 51.5%,
-    #ffffff 54%,
-    var(--text) 57% 100%);
-  background-size: 300% 300%;
-  background-position: 0% 100%;
+  position: relative;
   padding-right: 0.08em;     /* 文字の右端が切れないように */
   margin-right: -0.08em;
-  -webkit-background-clip: text;
-          background-clip: text;
-  animation: slash 4.5s cubic-bezier(.6, 0, .3, 1) 1.4s infinite;
 }
-@keyframes slash {
-  0%        { background-position: 0% 100%; }
-  35%, 100% { background-position: 100% 0%; }
+.hero-en .va::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  /* 「／」向きの線を、Aのあたりに4本 */
+  background: linear-gradient(to bottom right,
+    transparent 0 50%,
+    var(--bg) 50% 52.5%, transparent 52.5% 58%,
+    var(--bg) 58% 60.5%, transparent 60.5% 66%,
+    var(--bg) 66% 68.5%, transparent 68.5% 74%,
+    var(--bg) 74% 76.5%, transparent 76.5% 100%);
+  /* 右上の角から左下へ向かって描かれていく */
+  animation: slash-in 1s cubic-bezier(.6, 0, .2, 1) 1.2s both;
+}
+@keyframes slash-in {
+  from { clip-path: inset(0 0 100% 100%); }
+  to   { clip-path: inset(0 0 0 0); }
 }
 /* 「O」を差し色の丸いリングに置きかえる（ボタンと同じリズムでやわらかく光る） */
 .hero-en .o {
