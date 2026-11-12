@@ -61,7 +61,6 @@ const TOOLS = [
     category: "calc",
     emoji: "📅",
     color: "#e8a0a0",
-    isNew: true,
   },
   {
     name: "SI単位変換ノート",
@@ -70,7 +69,6 @@ const TOOLS = [
     category: "calc",
     emoji: "📐",
     color: "#8fb6e2",
-    isNew: true,
   },
   {
     name: "くらしの単位変換",
@@ -79,7 +77,6 @@ const TOOLS = [
     category: "calc",
     emoji: "⚖️",
     color: "#5cb88a",
-    isNew: true,
   },
   {
     name: "高速と下道の費用比較",
