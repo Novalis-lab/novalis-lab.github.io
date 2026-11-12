@@ -10,7 +10,9 @@
 /* Google Fonts（無料）
    ・Zen Maru Gothic … 日本語の見出し・本文（丸みのあるやわらかいゴシック）
    ・Unbounded       … 英字ロゴ「NOVALIS」・英字の見出し・数字 */
-@import url("https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap");
+/* 日本語は「普通（400）」と「太字（700）」の2種類だけ読み込む。
+   ページ側で 500 や 900 を指定していても、それぞれ 400・700 で表示されて、文字が潰れて見えない */
+@import url("https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Zen+Maru+Gothic:wght@400;700&display=swap");
 
 :root {
   /* 日本語の見出し・本文のフォント */
@@ -23,9 +25,8 @@
   --radius: 8px;
 }
 
-/* 日本語の見出しは、文字の間を少し詰めて引き締める（プロポーショナル詰め） */
-h1, h2, h3,
-.hero-copy, .hero-ja-name, .tool-name, .feature-title,
-.verdict, .hero-sub {
-  font-feature-settings: "palt" 1;
+/* 暗い背景でも文字が太って見えないように、なめらかに細く表示する（Mac・iPhone） */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

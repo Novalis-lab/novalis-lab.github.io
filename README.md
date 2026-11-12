@@ -20,7 +20,7 @@
 3. `name`（名前）・`description`（説明）・`url`（アドレス）・`emoji`・`color` を書きかえる
 4. 保存してアップロードすると、カードが1枚増えます
 
-5. `index.html` の下のほうにある `tools.js?v=20261113b` の数字を、その日の日付などに書きかえる（スマホのホーム画面から開いたときも、新しい内容が読み込まれるようにするため。`style.css` や `main.js` を直したときも同じように数字を変えてください）
+5. `index.html` の下のほうにある `tools.js?v=20261113c` の数字を、その日の日付などに書きかえる（スマホのホーム画面から開いたときも、新しい内容が読み込まれるようにするため。`style.css` や `main.js` を直したときも同じように数字を変えてください）
 
 ※ `index.html` の `<noscript>` の中にも同じリンクを1行足しておくと、JavaScriptが動かない環境でもリンクが表示されます（なくても動作に問題はありません）。
 
@@ -38,7 +38,7 @@
 - 新しいツールで使うときは、`<head>` に次の1行を入れて、`font-family: var(--font);`（英字は `var(--font-en)`）と `border-radius: var(--radius);` を使う
 
 ```html
-<link rel="stylesheet" href="https://novalis-lab.github.io/common.css?v=20261113b">
+<link rel="stylesheet" href="https://novalis-lab.github.io/common.css?v=20261113c">
 ```
 
 ## 広告を入れるとき
