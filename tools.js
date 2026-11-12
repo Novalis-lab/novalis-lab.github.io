@@ -38,7 +38,7 @@ const CATEGORIES = [
 const TOOLS = [
   {
     name: "色の組み合わせ提案",
-    description: "1色えらぶだけで、補色・類似色など6種類の組み合わせから5色の配色を提案。タップで色コードをコピー、見本と文字の読みやすさのチェックつき。",
+    description: "メインの色を1色えらぶだけで、相性のいい5色の配色を提案。日本語の色名つきで、平置きコーデで服の色合わせも見られます。",
     url: "https://novalis-lab.github.io/color-palette/",
     category: "design",
     emoji: "🎨",
