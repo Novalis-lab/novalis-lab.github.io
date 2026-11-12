@@ -9,8 +9,7 @@
   --line: rgba(255, 255, 255, 0.12);
   --accent: #6f9fd4;      /* 差し色（落ち着いた青）※ここを変えると全体の差し色が変わる（ボタンと帯の光 .hero-cta / .ticker の色も合わせて変える） */
   --accent-ink: #0b0b0d;  /* 差し色の上に乗る文字の色 */
-  /* 日本語フォント --font と角の丸み --radius は common.css で共通管理 */
-  --font-en: "Unbounded", "Zen Maru Gothic", sans-serif;   /* 英字ロゴ（NOVALIS）用 */
+  /* フォント（--font・--font-en）と角の丸み（--radius）は common.css で共通管理 */
   --gutter: clamp(16px, 4vw, 40px);
   --max: 1120px;
 }

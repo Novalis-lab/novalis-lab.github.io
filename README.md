@@ -20,21 +20,25 @@
 3. `name`（名前）・`description`（説明）・`url`（アドレス）・`emoji`・`color` を書きかえる
 4. 保存してアップロードすると、カードが1枚増えます
 
-5. `index.html` の下のほうにある `tools.js?v=20261113a` の数字を、その日の日付などに書きかえる（スマホのホーム画面から開いたときも、新しい内容が読み込まれるようにするため。`style.css` や `main.js` を直したときも同じように数字を変えてください）
+5. `index.html` の下のほうにある `tools.js?v=20261113b` の数字を、その日の日付などに書きかえる（スマホのホーム画面から開いたときも、新しい内容が読み込まれるようにするため。`style.css` や `main.js` を直したときも同じように数字を変えてください）
 
 ※ `index.html` の `<noscript>` の中にも同じリンクを1行足しておくと、JavaScriptが動かない環境でもリンクが表示されます（なくても動作に問題はありません）。
 
 ## 全ページ共通のフォントと角の丸み（common.css）
 
-`common.css` で、日本語フォント（`--font`：Zen Maru Gothic）と角の丸み（`--radius`：8px）をまとめて管理しています。
+`common.css` で、フォント（Google Fonts・無料）と角の丸みをまとめて管理しています。
+
+- `--font`：日本語の見出し・本文（Zen Maru Gothic）
+- `--font-en`：英字ロゴ・英字の見出し・数字（Unbounded）
+- `--radius`：ボタンやカードの角の丸み（8px）
 トップページ・くらしの単位変換・高速と下道の費用比較が読み込んでいます。
 
 - フォントや丸みを変えたいときは `common.css` だけ直せばOK
 - 直したあとは、各ページの `common.css?v=〇〇` の数字も新しくすると、確実に反映されます
-- 新しいツールで使うときは、`<head>` に次の1行を入れて、`font-family: var(--font);` と `border-radius: var(--radius);` を使う
+- 新しいツールで使うときは、`<head>` に次の1行を入れて、`font-family: var(--font);`（英字は `var(--font-en)`）と `border-radius: var(--radius);` を使う
 
 ```html
-<link rel="stylesheet" href="https://novalis-lab.github.io/common.css?v=20261113a">
+<link rel="stylesheet" href="https://novalis-lab.github.io/common.css?v=20261113b">
 ```
 
 ## 広告を入れるとき
