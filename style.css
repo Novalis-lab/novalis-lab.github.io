@@ -48,6 +48,7 @@ a { color: inherit; }
   width: 75%;
   height: 120%;
   background: repeating-linear-gradient(-55deg, rgba(255, 255, 255, 0.04) 0 1px, transparent 1px 14px);
+  animation: drift 14s ease-in-out infinite alternate;
   -webkit-mask-image: linear-gradient(200deg, #000 10%, transparent 60%);
           mask-image: linear-gradient(200deg, #000 10%, transparent 60%);
 }
@@ -87,6 +88,7 @@ a { color: inherit; }
   animation: blink 1.6s steps(2, end) infinite;
 }
 @keyframes blink { 50% { opacity: 0; } }
+@keyframes drift { to { transform: translate(-60px, 24px); } }
 
 /* ---------- ヒーロー ---------- */
 .hero { padding-top: clamp(48px, 10vw, 112px); }
@@ -116,10 +118,13 @@ a { color: inherit; }
 /* 「LIS」は白から差し色へのなめらかなグラデーション */
 .hero-en .outline {
   color: transparent;
-  background: linear-gradient(100deg, var(--text) 10%, var(--accent) 95%);
+  background: linear-gradient(100deg, var(--text) 0%, var(--accent) 35%, var(--text) 70%, var(--accent) 100%);
+  background-size: 200% 100%;
   -webkit-background-clip: text;
           background-clip: text;
+  animation: flow 7s linear infinite;
 }
+@keyframes flow { to { background-position: -200% 0; } }
 /* 「O」を差し色の丸いリングに置きかえる（ボタンと同じリズムでやわらかく光る） */
 .hero-en .o {
   display: inline-block;
@@ -129,9 +134,28 @@ a { color: inherit; }
   border: 0.15em solid var(--accent);
   border-radius: 50%;
   vertical-align: 0;
+  position: relative;
   box-shadow: 0 0 18px 2px rgba(111, 159, 212, 0.45), inset 0 0 14px rgba(111, 159, 212, 0.35);
-  animation: glow-ring 2.8s ease-in-out infinite;
+  animation:
+    pop 0.9s cubic-bezier(.3, 1.6, .5, 1) 0.35s both,
+    glow-ring 2.8s ease-in-out infinite,
+    orbit 6s linear infinite;
 }
+/* リングのまわりを回る光の粒 */
+.hero-en .o::after {
+  content: "";
+  position: absolute;
+  top: -0.135em;
+  left: 50%;
+  width: 0.12em;
+  height: 0.12em;
+  margin-left: -0.06em;
+  border-radius: 50%;
+  background: var(--text);
+  box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.7), 0 0 24px 6px rgba(111, 159, 212, 0.8);
+}
+@keyframes pop { from { scale: 0; } }
+@keyframes orbit { to { rotate: 360deg; } }
 @keyframes glow-ring {
   50% { box-shadow: 0 0 30px 6px rgba(111, 159, 212, 0.65), inset 0 0 20px rgba(111, 159, 212, 0.5); }
 }
@@ -160,8 +184,13 @@ a { color: inherit; }
 }
 .hero-copy em {
   font-style: normal;
-  background: linear-gradient(transparent 84%, var(--accent) 84%, var(--accent) 94%, transparent 94%);
+  white-space: nowrap;
+  background: linear-gradient(transparent 84%, var(--accent) 84%, var(--accent) 94%, transparent 94%) no-repeat left / 100% 100%;
 }
+/* 表示されたときに、下線が左からスッと引かれる */
+.js .hero-copy em { background-size: 0% 100%; transition: background-size 0.9s cubic-bezier(.7, 0, .2, 1) 0.5s; }
+.js .hero-copy em + br + em { transition-delay: 0.9s; }
+.js .hero-copy.is-visible em { background-size: 100% 100%; }
 .hero-side { display: flex; flex-direction: column; justify-content: space-between; gap: 24px; }
 .hero-lead { margin: 0; color: var(--muted); font-size: 0.95rem; }
 .hero-cta {
@@ -539,4 +568,5 @@ noscript .tool-card { display: block; padding: 20px 0; font-weight: 700; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .js .reveal { opacity: 1; transform: none; }
   .js .hero-en .line > span { transform: none; }
+  .js .hero-copy em { background-size: 100% 100%; }
 }
