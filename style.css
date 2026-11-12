@@ -113,21 +113,27 @@ a { color: inherit; }
 }
 .hero-en .line { display: block; }
 .hero-en .line-2 { padding-left: 0.9em; }
-/* 「LIS」は斜めのストライプで塗る */
+/* 「LIS」は白から差し色へのなめらかなグラデーション */
 .hero-en .outline {
   color: transparent;
-  background: repeating-linear-gradient(-55deg, var(--text) 0 3px, transparent 3px 9px);
+  background: linear-gradient(100deg, var(--text) 10%, var(--accent) 95%);
   -webkit-background-clip: text;
           background-clip: text;
 }
-/* 「O」を差し色の四角いリングに置きかえる */
+/* 「O」を差し色の丸いリングに置きかえる（ボタンと同じリズムでやわらかく光る） */
 .hero-en .o {
   display: inline-block;
-  width: 0.66em;
-  height: 0.66em;
-  margin: 0 0.03em 0 0.01em;
+  width: 0.7em;
+  height: 0.7em;
+  margin: 0 0.02em 0 0;
   border: 0.15em solid var(--accent);
+  border-radius: 50%;
   vertical-align: 0;
+  box-shadow: 0 0 18px 2px rgba(111, 159, 212, 0.45), inset 0 0 14px rgba(111, 159, 212, 0.35);
+  animation: glow-ring 2.8s ease-in-out infinite;
+}
+@keyframes glow-ring {
+  50% { box-shadow: 0 0 30px 6px rgba(111, 159, 212, 0.65), inset 0 0 20px rgba(111, 159, 212, 0.5); }
 }
 .hero-ja-name {
   display: block;
@@ -523,7 +529,6 @@ noscript .tool-card { display: block; padding: 20px 0; font-weight: 700; }
   .tool-card:hover .tool-num { color: var(--accent-ink); }
 }
 @media (max-width: 420px) {
-  .hero-en .outline { background-image: repeating-linear-gradient(-55deg, var(--text) 0 2px, transparent 2px 6px); }
   .section-head { grid-template-columns: 1fr auto; }
   .section-no { grid-column: 1 / -1; padding-bottom: 0; }
 }
