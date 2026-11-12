@@ -513,8 +513,10 @@ noscript .tool-card { display: block; padding: 20px 0; font-weight: 700; }
 }
 
 /* ---------- 動き（読み込み時・スクロール時） ---------- */
-.js .hero-en .line { overflow: hidden; }
-.js .hero-en .line > span { display: block; transform: translateY(105%); animation: rise 1s cubic-bezier(.2, .7, .2, 1) forwards; }
+/* 文字がせり上がるときの「窓」。上下に余白をとって、Oの光が切れないようにする */
+.js .hero-en { display: flex; flex-direction: column; } /* 行どうしの余白が重ならないように */
+.js .hero-en .line { overflow: hidden; padding-top: 72px; padding-bottom: 72px; margin-top: -72px; margin-bottom: -72px; }
+.js .hero-en .line > span { display: block; transform: translateY(calc(100% + 80px)); animation: rise 1s cubic-bezier(.2, .7, .2, 1) forwards; }
 .js .hero-en .line-2 > span { animation-delay: 0.12s; }
 @keyframes rise { to { transform: none; } }
 
