@@ -139,13 +139,25 @@ a { color: inherit; }
   left: 0;
   right: 0;
   pointer-events: none;
-  /* 「／」向きの線を、Aのあたりに4本 */
-  background: linear-gradient(to bottom right,
-    transparent 0 50%,
-    var(--bg) 50% 52.5%, transparent 52.5% 58%,
-    var(--bg) 58% 60.5%, transparent 60.5% 66%,
-    var(--bg) 66% 68.5%, transparent 68.5% 74%,
-    var(--bg) 74% 76.5%, transparent 76.5% 100%);
+  /* 背景の斜線と同じ角度（-55deg）の細い線を8本、Aのあたりに */
+  background: linear-gradient(-55deg,
+    transparent 0 8%,
+    var(--bg) 8.0% 9.2%,
+    transparent 9.2% 12.5%,
+    var(--bg) 12.5% 13.7%,
+    transparent 13.7% 17.0%,
+    var(--bg) 17.0% 18.2%,
+    transparent 18.2% 21.5%,
+    var(--bg) 21.5% 22.7%,
+    transparent 22.7% 26.0%,
+    var(--bg) 26.0% 27.2%,
+    transparent 27.2% 30.5%,
+    var(--bg) 30.5% 31.7%,
+    transparent 31.7% 35.0%,
+    var(--bg) 35.0% 36.2%,
+    transparent 36.2% 39.5%,
+    var(--bg) 39.5% 40.7%,
+    transparent 40.7% 100%);
   /* 右上の角から左下へ向かって描かれていく */
   animation: slash-in 1s cubic-bezier(.6, 0, .2, 1) 1.2s both;
 }
