@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ページが見つかりませんでした｜novalis</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0b0b0d">
+  <!-- サイトのアイコン（どの階層で表示されても読めるよう、すべて / から始まる書き方） -->
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- 全ページ共通（フォント・角の丸み）とトップページのデザイン -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/common.css?v=20261113c">
+  <link rel="stylesheet" href="/style.css?v=20261113f">
+</head>
+<body>
+  <!-- 背景の飾り（縦のガイド線と斜めのライン） -->
+  <div class="bg" aria-hidden="true">
+    <span class="bg-cols"></span>
+    <span class="bg-slash"></span>
+  </div>
+
+  <div class="inner">
+    <div class="topbar">
+      <a class="logo" href="/"><span class="logo-mark" aria-hidden="true"></span>NOVALIS</a>
+      <div class="topbar-meta"><span class="live">404</span></div>
+    </div>
+
+    <main class="notfound">
+      <p class="page-kicker">PAGE NOT FOUND</p>
+      <span class="code" aria-hidden="true">4<i class="o"></i>4</span>
+      <h1 class="page-title">ページが<wbr>見つかりませんでした</h1>
+      <p class="page-lead">お探しのページは、移動または削除されたか、アドレスがまちがっている可能性があります。<br>トップページから、使いたいツールを探してみてください。</p>
+      <div class="back-row">
+        <a class="hero-cta" href="/">トップページへ戻る<span class="arrow" aria-hidden="true">→</span></a>
+      </div>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <div class="inner footer-row">
+      <p>© <span id="year">2026</span> NOVALIS</p>
+      <ul class="footer-links">
+        <li><a href="/privacy/">プライバシーポリシー</a></li>
+        <li><a href="/about/">運営者情報</a></li>
+      </ul>
+    </div>
+    <p class="footer-logo" aria-hidden="true">NOVALIS</p>
+  </footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
