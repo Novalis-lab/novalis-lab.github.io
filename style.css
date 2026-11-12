@@ -125,6 +125,28 @@ a { color: inherit; }
   animation: flow 7s linear infinite;
 }
 @keyframes flow { to { background-position: -200% 0; } }
+/* 「VA」の中を、青く光る斜めの線が右上から左下へ通り抜ける */
+.hero-en .va {
+  color: transparent;
+  background: linear-gradient(45deg,
+    var(--text) 0 43%,
+    #ffffff 46%,
+    var(--accent) 48.5%,
+    var(--accent) 51.5%,
+    #ffffff 54%,
+    var(--text) 57% 100%);
+  background-size: 300% 300%;
+  background-position: 0% 100%;
+  padding-right: 0.08em;     /* 文字の右端が切れないように */
+  margin-right: -0.08em;
+  -webkit-background-clip: text;
+          background-clip: text;
+  animation: slash 4.5s cubic-bezier(.6, 0, .3, 1) 1.4s infinite;
+}
+@keyframes slash {
+  0%        { background-position: 0% 100%; }
+  35%, 100% { background-position: 100% 0%; }
+}
 /* 「O」を差し色の丸いリングに置きかえる（ボタンと同じリズムでやわらかく光る） */
 .hero-en .o {
   display: inline-block;
