@@ -36,6 +36,15 @@ const CATEGORIES = [
 
 const TOOLS = [
   {
+    name: "今日の晩ごはんルーレット",
+    description: "献立に迷ったら回すだけ。和食・洋食・中華などジャンルを選んだり、家の定番メニューを入れたりして、今日の晩ごはんをルーレットで決めます。",
+    url: "https://novalis-lab.github.io/dinner-roulette/",
+    category: "fun",
+    emoji: "🎡",
+    color: "#d4a06a",
+    isNew: true,
+  },
+  {
     name: "日付計算",
     description: "今日から何日後・何日前が何月何日かを、曜日と和暦つきですぐ計算。2つの日付のあいだが何日あるかもわかります。",
     url: "https://novalis-lab.github.io/date-calc/",
