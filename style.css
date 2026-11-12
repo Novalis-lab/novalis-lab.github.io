@@ -114,7 +114,7 @@ a { color: inherit; }
   margin-left: -0.05em;
 }
 .hero-en .line { display: block; }
-.hero-en .line-2 { padding-left: min(2em, calc(100% - 1.95em)); } /* LISの位置（画面が狭いときは、はみ出さない所まで） */
+.hero-en .line-2 { padding-left: min(1.58em, calc(100% - 1.95em)); } /* LISの位置：Lの左端がOとVの中間にくる（画面が狭いときは、はみ出さない所まで） */
 /* 「LIS」は白から差し色へのなめらかなグラデーション */
 .hero-en .outline {
   color: transparent;
