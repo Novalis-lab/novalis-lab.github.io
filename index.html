@@ -41,7 +41,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- 全ページ共通（日本語フォント Zen Maru Gothic・角の丸み） -->
   <link rel="stylesheet" href="/common.css?v=20261113c">
-  <link rel="stylesheet" href="style.css?v=20261113f">
+  <link rel="stylesheet" href="style.css?v=20261113g">
 </head>
 <body>
   <!-- 背景の飾り（縦のガイド線と斜めのライン） -->
@@ -102,7 +102,10 @@
       </div>
 
       <!-- ツールのカードは tools.js の内容から自動で作られます -->
-      <ul id="tool-list" class="tool-list"></ul>
+      <!-- 区分の切り替えボタン（tools.js の CATEGORIES から自動で作られます） -->
+      <div id="tool-filter" class="tool-filter" aria-label="ツールの区分"></div>
+      <!-- 区分ごとの見出しとカード（tools.js の内容から自動で作られます） -->
+      <div id="tool-groups" class="tool-groups"></div>
 
       <!-- JavaScriptが動かないときのための予備のリンク -->
       <noscript>
@@ -154,7 +157,7 @@
   </footer>
 
   <!-- ツールの一覧を先に読み込み、そのあとカードを作るプログラムを読み込みます -->
-  <script src="tools.js?v=20261113f"></script>
-  <script src="main.js?v=20261113f"></script>
+  <script src="tools.js?v=20261113g"></script>
+  <script src="main.js?v=20261113g"></script>
 </body>
 </html>

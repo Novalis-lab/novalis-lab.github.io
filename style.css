@@ -605,6 +605,92 @@ noscript .tool-card { display: block; padding: 20px 0; font-weight: 700; }
   .section-no { grid-column: 1 / -1; padding-bottom: 0; }
 }
 
+/* ---------- ツールの区分（切り替えボタンと見出し） ---------- */
+.tool-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 22px 0 6px;
+}
+.tool-filter button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 6px 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius, 8px);
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s, background 0.2s, box-shadow 0.3s;
+}
+.tool-filter button:hover { color: var(--text); border-color: var(--accent); }
+.tool-filter .f-count {
+  min-width: 1.6em;
+  padding: 0 6px;
+  border-radius: calc(var(--radius, 8px) / 2);
+  background: rgba(255, 255, 255, 0.08);
+  font-family: var(--font-en);
+  font-size: 0.68rem;
+  line-height: 1.6;
+  text-align: center;
+}
+.tool-filter button[aria-pressed="true"] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+  box-shadow: 0 0 16px 1px rgba(111, 159, 212, 0.5);
+}
+.tool-filter button[aria-pressed="true"] .f-count { background: rgba(11, 11, 13, 0.18); }
+
+@media (max-width: 760px) {
+  /* スマホでは1列に並べて、横にスクロール */
+  .tool-filter {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    margin-left: calc(var(--gutter) * -1);
+    margin-right: calc(var(--gutter) * -1);
+    padding: 2px var(--gutter) 6px;
+    scrollbar-width: none;
+  }
+  .tool-filter::-webkit-scrollbar { display: none; }
+  .tool-filter button { flex: 0 0 auto; }
+}
+.tool-group { margin-top: 30px; }
+.tool-group[hidden] { display: none; }
+.group-head {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  padding: 0 0 12px;
+  border-bottom: 1px solid var(--line);
+}
+.group-no {
+  font-family: var(--font-en);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+}
+.group-title { margin: 0; font-size: 1.25rem; font-weight: 700; }
+.group-en {
+  font-family: var(--font-en);
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  color: var(--muted);
+}
+.group-count {
+  margin-left: auto;
+  font-family: var(--font-en);
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  color: var(--muted);
+}
+
 /* ---------- フッターのリンク（プライバシーポリシー・運営者情報） ---------- */
 .footer-links {
   display: flex;
