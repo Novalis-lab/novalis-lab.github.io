@@ -20,6 +20,14 @@
 
 const TOOLS = [
   {
+    name: "日付計算",
+    description: "今日から何日後・何日前が何月何日かを、曜日と和暦つきですぐ計算。2つの日付のあいだが何日あるかもわかります。",
+    url: "https://novalis-lab.github.io/date-calc/",
+    emoji: "📅",
+    color: "#e8a0a0",
+    isNew: true,
+  },
+  {
     name: "SI単位変換ノート",
     description: "圧力・温度・熱量・力・仕事率・体積・密度・接頭語を変換。結果といっしょに「計算の途中」も出るので、勉強や資格試験の確認に。",
     url: "https://novalis-lab.github.io/si-converter/",
