@@ -179,8 +179,51 @@
       var now = Date.now();
       taps = now - last < 700 ? taps + 1 : 1;
       last = now;
-      if (taps >= 5) { taps = 0; location.href = SECRET_URL; return; }
+      if (taps >= 5) { taps = 0; enterSecret(); return; }
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   }
+
+  /* 入るときのアニメーション：ロゴの青い◆が回りながらこちらに迫ってきて画面をおおい、暗転してから移動 */
+  var entering = false;
+  function enterSecret() {
+    var mark = logo && logo.querySelector(".logo-mark");
+    var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (entering) return;
+    if (!mark || reduce || !document.body.animate) { location.href = SECRET_URL; return; }
+    entering = true;
+    var r = mark.getBoundingClientRect();
+    var cx = r.left + r.width / 2, cy = r.top + r.height / 2;
+    var size = mark.offsetWidth || 12;
+    // 画面のまんなかへ動く量と、そこから画面全体をおおえる大きさ（回転しても隅が残らないように余裕をもたせる）
+    var dx = innerWidth / 2 - cx, dy = innerHeight / 2 - cy;
+    var scale = Math.hypot(innerWidth, innerHeight) * 1.2 / size;
+    var sq = document.createElement("div");
+    sq.setAttribute("aria-hidden", "true");
+    sq.style.cssText = "position:fixed;z-index:9999;pointer-events:none;left:" + (cx - size / 2) + "px;top:" + (cy - size / 2) + "px;width:" + size + "px;height:" + size + "px;" +
+      "background:var(--accent,#6f9fd4);will-change:transform;box-shadow:0 0 12px 3px rgba(111,159,212,.8)";
+    var veil = document.createElement("div");
+    veil.setAttribute("aria-hidden", "true");
+    veil.style.cssText = "position:fixed;inset:0;z-index:10000;pointer-events:none;background:#0b0b0d;opacity:0";
+    document.body.appendChild(sq);
+    document.body.appendChild(veil);
+    mark.style.visibility = "hidden";
+
+    // 1) ◆がふわっと画面のまんなかへ → 2) 回りながら加速して、こちらに迫ってくる → 3) 画面をおおって暗転
+    var at = "translate(" + dx + "px," + dy + "px) ";
+    sq.animate([
+      { transform: "translate(0,0) rotate(45deg) scale(1)", offset: 0, easing: "cubic-bezier(.3,.7,.3,1)" },
+      { transform: at + "rotate(45deg) scale(3.5)", offset: .38, easing: "cubic-bezier(.7,0,1,.6)" },
+      { transform: at + "rotate(225deg) scale(" + scale + ")", offset: 1 }
+    ], { duration: 1300, fill: "forwards" });
+    var fade = veil.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 280, delay: 1150, easing: "ease-in", fill: "forwards" });
+    fade.onfinish = function () { location.href = SECRET_URL; };
+  }
+  // 「戻る」でこのページに戻ってきたときは、アニメーションの残りを片づける
+  window.addEventListener("pageshow", function (e) {
+    if (!e.persisted) return;
+    entering = false;
+    var m = logo && logo.querySelector(".logo-mark"); if (m) m.style.visibility = "";
+    [].forEach.call(document.querySelectorAll("body > div[aria-hidden='true'][style*='z-index']"), function (el) { el.remove(); });
+  });
 })();
