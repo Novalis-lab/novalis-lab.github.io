@@ -37,6 +37,15 @@ const CATEGORIES = [
 
 const TOOLS = [
   {
+    name: "ポケモンGO 個体値チェッカー",
+    description: "CP・HP・ほしのすな・入手方法から、あり得る個体値（攻撃・防御・HP）をすべて計算して％で表示。ひらがなでポケモンを探せます。非公式ツールです。",
+    url: "https://novalis-lab.github.io/iv-checker/",
+    category: "fun",
+    emoji: "🎮",
+    color: "#ffd166",
+    isNew: true,
+  },
+  {
     name: "色の組み合わせ提案",
     description: "メインの色を1色えらぶだけで、相性のいい5色の配色を提案。日本語の色名つきで、平置きコーデで服の色合わせも見られます。",
     url: "https://novalis-lab.github.io/color-palette/",
