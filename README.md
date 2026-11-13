@@ -46,7 +46,7 @@
 - 新しいツールで使うときは、`<head>` に次の1行を入れて、`font-family: var(--font);`（英字は `var(--font-en)`）と `border-radius: var(--radius);` を使う
 
 ```html
-<link rel="stylesheet" href="https://novalis-lab.github.io/common.css?v=20261113c">
+<link rel="stylesheet" href="https://novalis-lab.github.io/common.css?v=20261113d">
 ```
 
 ## 広告を入れるとき
