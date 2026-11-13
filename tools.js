@@ -37,6 +37,15 @@ const CATEGORIES = [
 
 const TOOLS = [
   {
+    name: "パスワード生成",
+    description: "長さと使う文字をえらぶだけで、安全なパスワードをすぐ作成。記号なしやPINにも対応。端末の中だけで作り、どこにも送りません。",
+    url: "https://novalis-lab.github.io/password-generator/",
+    category: "calc",
+    emoji: "🔑",
+    color: "#9fd4b4",
+    isNew: true,
+  },
+  {
     name: "ポケモンGO 個体値チェッカー",
     description: "CP・HP・ほしのすな・入手方法から、あり得る個体値（攻撃・防御・HP）をすべて計算して％で表示。ひらがなでポケモンを探せます。非公式ツールです。",
     url: "https://novalis-lab.github.io/iv-checker/",
@@ -52,7 +61,6 @@ const TOOLS = [
     category: "design",
     emoji: "🎨",
     color: "#f783ac",
-    isNew: true,
   },
   {
     name: "今日の晩ごはんルーレット",
@@ -61,7 +69,6 @@ const TOOLS = [
     category: "fun",
     emoji: "🎡",
     color: "#d4a06a",
-    isNew: true,
   },
   {
     name: "日付計算",
