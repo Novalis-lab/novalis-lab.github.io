@@ -166,8 +166,11 @@
   document.getElementById("tool-count").textContent = TOOLS.length + " ITEMS";
   document.getElementById("year").textContent = new Date().getFullYear();
 
-  /* 秘密の入り口：左上の「◆ NOVALIS」を素早く5回タップするとパスワード金庫へ。
-     1回だけのタップは、これまでどおりページの先頭に戻るだけ（見た目は何も変わらない） */
+  /* 秘密の入り口：左上の「◆ NOVALIS」を素早く5回タップすると SECRET_URL へ移動する。
+     1回だけのタップは、これまでどおりページの先頭に戻るだけ（見た目は何も変わらない）
+     今は行き先がまだないので、存在しないページ → 404（ページが見つかりません）が出る。
+     ツールを紐づけるときは、SECRET_URL をそのツールのアドレスに書きかえる */
+  var SECRET_URL = "/secret/";
   var logo = document.querySelector(".topbar .logo, .logo");
   if (logo) {
     var taps = 0, last = 0;
@@ -176,7 +179,7 @@
       var now = Date.now();
       taps = now - last < 700 ? taps + 1 : 1;
       last = now;
-      if (taps >= 5) { taps = 0; location.href = "https://novalis-lab.github.io/password-vault/"; return; }
+      if (taps >= 5) { taps = 0; location.href = SECRET_URL; return; }
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   }
