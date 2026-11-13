@@ -37,6 +37,15 @@ const CATEGORIES = [
 
 const TOOLS = [
   {
+    name: "パスワード金庫",
+    description: "サイトのIDとパスワードを、マスターパスワードで暗号化してこの端末の中だけに保管。どこにも送信しません。暗号化バックアップつき。",
+    url: "https://novalis-lab.github.io/password-vault/",
+    category: "calc",
+    emoji: "🔐",
+    color: "#8fb6e2",
+    isNew: true,
+  },
+  {
     name: "パスワード生成",
     description: "長さと使う文字をえらぶだけで、安全なパスワードをすぐ作成。記号なしやPINにも対応。端末の中だけで作り、どこにも送りません。",
     url: "https://novalis-lab.github.io/password-generator/",
@@ -52,7 +61,6 @@ const TOOLS = [
     category: "fun",
     emoji: "🎮",
     color: "#ffd166",
-    isNew: true,
   },
   {
     name: "色の組み合わせ提案",
