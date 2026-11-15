@@ -37,6 +37,15 @@ const CATEGORIES = [
 
 const TOOLS = [
   {
+    name: "割り勘計算",
+    description: "合計金額と人数を入れるだけで、ひとりいくらかすぐ計算。上司は多め・飲まない人は少なめの傾斜や、100円単位の切り上げにも対応。結果はLINEで送れます。",
+    url: "https://novalis-lab.github.io/warikan/",
+    category: "money",
+    emoji: "🧾",
+    color: "#e6b85c",
+    isNew: true,
+  },
+  {
     name: "パスワード金庫",
     description: "サイトのIDとパスワードを、マスターパスワードで暗号化してこの端末の中だけに保管。どこにも送信しません。暗号化バックアップつき。",
     url: "https://novalis-lab.github.io/password-vault/",
