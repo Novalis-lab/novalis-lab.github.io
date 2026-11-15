@@ -264,6 +264,7 @@
     .unit-input input::placeholder { color: var(--dim); font-family: var(--font); font-size: 1.05rem; }
     .unit-input span { color: var(--muted); font-size: 0.85rem; font-weight: 700; white-space: nowrap; padding-left: 6px; }
     .note { margin: 10px 0 0; font-size: 0.76rem; color: var(--dim); line-height: 1.6; }
+    .warn-note { margin: 10px 0 0; font-size: 0.8rem; font-weight: 700; color: var(--warn); line-height: 1.6; }
 
     /* 選択ボタン（まとめ単位・端数の扱い） */
     .chips { display: flex; flex-wrap: wrap; gap: 6px; }
@@ -626,6 +627,7 @@
       <p id="result-empty">合計金額と人数を入れると、ここに結果が出ます。</p>
       <div id="result" hidden>
         <div class="hero-result" id="r-hero"></div>
+        <p class="warn-note" id="r-warn" hidden></p>
         <ul class="pay-list" id="r-list" style="margin-top:14px"></ul>
         <div class="summary">
           <div class="sum-box">
@@ -738,7 +740,7 @@
           const countEl = el.querySelector('.group-count');
           countEl.addEventListener('input', function () {
             const n = toNum(countEl.value);
-            g.count = n === null ? 0 : Math.floor(n);
+            g.count = n === null ? 0 : Math.min(999, Math.floor(n));
             calculate();
           });
           countEl.addEventListener('blur', function () { countEl.value = g.count; });
@@ -780,7 +782,9 @@
       // ---- 計算 ----
       let lastText = '';
       function calculate() {
-        const total = toNum($('total').value);
+        // 円未満は扱わない（入力欄を離れたときの表示「12,800」と同じ値で計算する）
+        const rawTotal = toNum($('total').value);
+        const total = rawTotal === null ? null : Math.round(rawTotal);
         const unit = Number(radio('unit'));
         const mode = radio('mode');
         const people = groups.reduce((s, g) => s + g.count, 0);
@@ -801,7 +805,8 @@
           const exact = total * g.ratio / weight;
           const q = exact / unit;
           // 小数のずれで 1単位ずれないように、わずかに余裕をもたせる
-          const per = (mode === 'up' ? Math.ceil(q - 1e-9) : Math.floor(q + 1e-9)) * unit;
+          // 「|| 0」は、×0の人が「-0円」と表示されないようにするため
+          const per = ((mode === 'up' ? Math.ceil(q - 1e-9) : Math.floor(q + 1e-9)) * unit) || 0;
           return { g: g, i: i, exact: exact, per: per };
         }).filter((r) => r.g.count > 0);
 
@@ -821,11 +826,18 @@
             + '<small>' + yen(total) + ' ÷ ' + people + '人'
             + (Math.abs(main.exact - main.per) > 0.005 ? ' ＝ ' + main.exact.toLocaleString('ja-JP', { maximumFractionDigits: 1 }) + '円' : '') + '</small>';
         } else {
-          const base = rows.find((r) => r.g.ratio === 1) || rows[0];
+          const base = rows.find((r) => r.g.ratio === 1) || rows.find((r) => r.g.ratio > 0) || rows[0];
           heroHtml = '<div class="cap">' + esc(nameOf(base)) + ' 1人あたり</div><div class="big">' + yenHtml(base.per) + '</div>'
             + '<small>' + yen(total) + ' を ' + people + '人で傾斜つき割り勘</small>';
         }
         $('r-hero').innerHTML = heroHtml;
+
+        // まとめ単位が大きすぎて、払う人が0円になってしまうとき
+        const zeroPay = rows.some((r) => r.g.ratio > 0 && r.per === 0);
+        $('r-warn').hidden = !zeroPay;
+        $('r-warn').textContent = zeroPay
+          ? '⚠ まとめ単位が大きいため、1人あたりが0円になり、幹事が全額を払う計算になっています。単位を小さくするか「多めに集める」を選んでください。'
+          : '';
 
         // 一覧
         const list = rows.map(function (r) {
