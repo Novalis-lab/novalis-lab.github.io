@@ -38,7 +38,7 @@ const CATEGORIES = [
 const TOOLS = [
   {
     name: "割り勘計算",
-    description: "合計金額と人数を入れるだけで、ひとりいくらかすぐ計算。上司は多め・飲まない人は少なめの傾斜や、100円単位の切り上げにも対応。結果はLINEで送れます。",
+    description: "合計金額と人数を入れるだけで、ひとりいくらかすぐ計算。多めに払う人の額はスライダーで決められて、100円単位の切り上げにも対応。結果はLINEで送れます。",
     url: "https://novalis-lab.github.io/warikan/",
     category: "money",
     emoji: "🧾",
