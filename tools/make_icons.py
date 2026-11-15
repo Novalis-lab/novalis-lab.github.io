@@ -11,6 +11,7 @@ novalis のアイコンを、元データ 1 つ（logo-square.svg）から全部
     apple-touch-icon.png  … iPhone のホーム画面のアイコン（180×180）
     icon-192.png          … Android のホーム画面のアイコン
     icon-512.png          … Android のホーム画面のアイコン（大）
+    favicon.ico           … 古いしくみ・検索エンジン向けのアイコン（16・32・48 の 3 サイズ入り）
 
 全部のツール（unit-converter・highway-cost・si-converter・date-calc・sai-slot）は
 https://novalis-lab.github.io/ にあるこれらのファイルを読み込んでいるので、
@@ -20,6 +21,7 @@ https://novalis-lab.github.io/ にあるこれらのファイルを読み込ん�
 """
 import os
 import re
+import struct
 import subprocess
 import sys
 import tempfile
@@ -66,6 +68,22 @@ def make_rounded_svg(src_text: str) -> str:
     )
 
 
+ICO_SIZES = [16, 32, 48]  # favicon.ico に入れる大きさ（Google は 48 の倍数をすすめている）
+
+
+def write_ico(path, pngs):
+    """PNG 画像を何枚か入れた favicon.ico を作る（ICO の中身は PNG のままでよい）"""
+    head = struct.pack("<HHH", 0, 1, len(pngs))
+    offset = 6 + 16 * len(pngs)
+    entries, datas = b"", b""
+    for size, data in pngs:
+        entries += struct.pack("<BBBBHHII", size % 256, size % 256, 0, 0, 1, 32, len(data), offset)
+        datas += data
+        offset += len(data)
+    with open(path, "wb") as f:
+        f.write(head + entries + datas)
+
+
 def run(cmd):
     subprocess.run(cmd, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
@@ -91,6 +109,15 @@ def main():
         for name, size in PNGS:
             run(["sips", "-z", str(size), str(size), big, "--out", os.path.join(ROOT, name)])
             print(f"作成: {name}（{size}×{size}）")
+        # favicon.ico
+        pngs = []
+        for size in ICO_SIZES:
+            out = os.path.join(tmp, f"ico-{size}.png")
+            run(["sips", "-z", str(size), str(size), big, "--out", out])
+            with open(out, "rb") as f:
+                pngs.append((size, f.read()))
+        write_ico(os.path.join(ROOT, "favicon.ico"), pngs)
+        print("作成: favicon.ico（16・32・48）")
 
     print("\n完了。git で反映（commit・push）すると、全ツールのアイコンが新しくなります。")
 
