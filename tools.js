@@ -37,6 +37,15 @@ const CATEGORIES = [
 
 const TOOLS = [
   {
+    name: "かんたんロゴメーカー",
+    description: "お店の名前・屋号・チーム名を入れるだけで、ロゴとアイコン画像を無料で作成。エンブレムや和モダンなどおしゃれな型も。透過PNG・512×512アイコンで保存できます。",
+    url: "https://novalis-lab.github.io/logo-maker/",
+    category: "design",
+    emoji: "🖋️",
+    color: "#c9a0dc",
+    isNew: true,
+  },
+  {
     name: "割り勘計算",
     description: "合計金額と人数を入れるだけで、ひとりいくらかすぐ計算。多めに払う人の額はスライダーで決められて、100円単位の切り上げにも対応。結果はLINEで送れます。",
     url: "https://novalis-lab.github.io/warikan/",
