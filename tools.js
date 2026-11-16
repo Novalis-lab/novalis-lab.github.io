@@ -33,9 +33,19 @@ const CATEGORIES = [
   { id: "money",  name: "おでかけ・お金", en: "MONEY & TRAVEL" },
   { id: "fun",    name: "ごはん・あそび", en: "FOOD & FUN" },
   { id: "design", name: "デザイン・つくる", en: "DESIGN" },
+  { id: "work",   name: "しごと・パソコン", en: "WORK & PC" },
 ];
 
 const TOOLS = [
+  {
+    name: "Excelショートカット検索",
+    description: "「合計」「行 挿入」「太字」など、やりたいことの言葉でエクセルのショートカットをすぐ検索。Windows・Mac 切り替え、よく使う10個、お気に入り登録つき。公式の一覧で確かめたキーだけを載せています。",
+    url: "https://novalis-lab.github.io/excel-shortcuts/",
+    category: "work",
+    emoji: "⌨️",
+    color: "#4cc38a",
+    isNew: true,
+  },
   {
     name: "かんたんロゴメーカー",
     description: "お店の名前・屋号・チーム名を入れるだけで、ロゴとアイコン画像を無料で作成。エンブレムや和モダンなどおしゃれな型も。透過PNG・512×512アイコンで保存できます。",
