@@ -38,6 +38,15 @@ const CATEGORIES = [
 
 const TOOLS = [
   {
+    name: "Excel関数 早見表",
+    description: "SUMIFS・VLOOKUP・IFERROR・DATEDIF など、仕事でよく使うエクセル関数67個を「合計」「条件」「日付」などの言葉で検索。書き方と営業・事務の使用例つきで、書き方はワンタップでコピーできます。",
+    url: "https://novalis-lab.github.io/excel-functions/",
+    category: "work",
+    emoji: "🧮",
+    color: "#6fcf97",
+    isNew: true,
+  },
+  {
     name: "Excelショートカット検索",
     description: "「合計」「行 挿入」「太字」など、やりたいことの言葉でエクセルのショートカットをすぐ検索。Windows・Mac 切り替え、よく使う10個、お気に入り登録つき。公式の一覧で確かめたキーだけを載せています。",
     url: "https://novalis-lab.github.io/excel-shortcuts/",
