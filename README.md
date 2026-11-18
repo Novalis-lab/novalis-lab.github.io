@@ -39,7 +39,7 @@
 - `--font`：日本語の見出し・本文（Zen Maru Gothic）
 - `--font-en`：英字ロゴ・英字の見出し・数字（Unbounded）
 - `--radius`：ボタンやカードの角の丸み（8px）
-トップページ（プライバシーポリシー・運営者情報・404 を含む）と、すべてのツール（くらしの単位変換・高速と下道の費用比較・割り勘計算・SI単位変換ノート・日付計算・今日の晩ごはんルーレット・色の組み合わせ提案・かんたんロゴメーカー・Excelショートカット検索・Excel関数 早見表・サイ⚪︎スロット）が読み込んでいます。
+トップページ（プライバシーポリシー・運営者情報・404 を含む）と、すべてのツール（くらしの単位変換・高速と下道の費用比較・割り勘計算・SI単位変換ノート・日付計算・今日の晩ごはんルーレット・色の組み合わせ提案・かんたんロゴメーカー・Excelショートカット検索・Excel関数 早見表・あみだくじ・サイ⚪︎スロット）が読み込んでいます。
 （サイ⚪︎スロットは、見出し・数字だけ専用のフォント Dela Gothic One を使っています）
 
 ほかに、iPhone でボタンを連打してもダブルタップで拡大しない設定（`touch-action: manipulation`）も入っています。
@@ -63,7 +63,7 @@
 1. このフォルダで `python3 tools/make_icons.py` を実行する（Mac 専用。元データから下の表のファイルを全部作り直します）
 2. このリポジトリを GitHub に反映（commit・push）する
 
-各ツール（unit-converter・highway-cost・si-converter・date-calc・sai-slot・warikan・logo-maker・excel-shortcuts・excel-functions）は、
+各ツール（unit-converter・highway-cost・si-converter・date-calc・sai-slot・warikan・logo-maker・excel-shortcuts・excel-functions・amidakuji）は、
 `https://novalis-lab.github.io/` にあるアイコンを読み込んでいるので、**ほかのリポジトリは何も直さなくてOK**です。
 （GitHub Pages は 10 分ほどでファイルを読み直させるので、少し待つと各ページに反映されます。iPhone のホーム画面に登録したアイコンだけは、登録し直すまで変わりません）
 

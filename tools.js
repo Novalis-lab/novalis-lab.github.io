@@ -38,6 +38,15 @@ const CATEGORIES = [
 
 const TOOLS = [
   {
+    name: "あみだくじ",
+    description: "名前と当たりを入れるだけで、すぐ遊べるあみだくじ。名前をタップすると線をたどって結果が出ます。順番決めや係決めにも。横線を自分で足せて、結果はLINEで送れます。",
+    url: "https://novalis-lab.github.io/amidakuji/",
+    category: "fun",
+    emoji: "🪜",
+    color: "#ffa94d",
+    isNew: true,
+  },
+  {
     name: "Excel関数 早見表",
     description: "SUMIFS・VLOOKUP・IFERROR・DATEDIF など、仕事でよく使うエクセル関数67個を「合計」「条件」「日付」などの言葉で検索。書き方と営業・事務の使用例つきで、書き方はワンタップでコピーできます。",
     url: "https://novalis-lab.github.io/excel-functions/",
