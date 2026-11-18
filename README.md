@@ -63,7 +63,7 @@
 1. このフォルダで `python3 tools/make_icons.py` を実行する（Mac 専用。元データから下の表のファイルを全部作り直します）
 2. このリポジトリを GitHub に反映（commit・push）する
 
-各ツール（unit-converter・highway-cost・si-converter・date-calc・sai-slot・warikan・logo-maker・excel-shortcuts）は、
+各ツール（unit-converter・highway-cost・si-converter・date-calc・sai-slot・warikan・logo-maker・excel-shortcuts・excel-functions）は、
 `https://novalis-lab.github.io/` にあるアイコンを読み込んでいるので、**ほかのリポジトリは何も直さなくてOK**です。
 （GitHub Pages は 10 分ほどでファイルを読み直させるので、少し待つと各ページに反映されます。iPhone のホーム画面に登録したアイコンだけは、登録し直すまで変わりません）
 
