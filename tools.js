@@ -38,6 +38,15 @@ const CATEGORIES = [
 
 const TOOLS = [
   {
+    name: "プロパンガス料金の目安",
+    description: "愛知・岐阜・三重のプロパンガス（LPガス）料金の平均的な目安を、使用量から計算。請求額を入れると、平均との差額と割合もわかります。データは石油情報センターの調査をもとに自動更新。",
+    url: "https://novalis-lab.github.io/lpgas-price/",
+    category: "money",
+    emoji: "🔥",
+    color: "#f2994a",
+    isNew: true,
+  },
+  {
     name: "Excel関数 早見表",
     description: "SUMIFS・VLOOKUP・IFERROR・DATEDIF など、仕事でよく使うエクセル関数67個を「合計」「条件」「日付」などの言葉で検索。書き方と営業・事務の使用例つきで、書き方はワンタップでコピーできます。",
     url: "https://novalis-lab.github.io/excel-functions/",
