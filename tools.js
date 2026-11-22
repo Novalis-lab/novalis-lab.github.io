@@ -38,6 +38,15 @@ const CATEGORIES = [
 
 const TOOLS = [
   {
+    name: "入学・卒業・入社年 早見表",
+    description: "生年月日を入れるだけで、幼稚園から大学・大学院までの入学年と卒業年、新卒入社の年を西暦と和暦で一覧に。浪人・留年・早生まれにも対応。履歴書の学歴欄にそのままコピーできます。",
+    url: "https://novalis-lab.github.io/school-years/",
+    category: "work",
+    emoji: "🎓",
+    color: "#f6c453",
+    isNew: true,
+  },
+  {
     name: "あみだくじ",
     description: "名前と当たりを入れるだけで、すぐ遊べるあみだくじ。名前をタップすると線をたどって結果が出ます。順番決めや係決めにも。横線を自分で足せて、結果はLINEで送れます。",
     url: "https://novalis-lab.github.io/amidakuji/",
