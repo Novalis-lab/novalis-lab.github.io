@@ -38,6 +38,15 @@ const CATEGORIES = [
 
 const TOOLS = [
   {
+    name: "年齢早見表（和暦・西暦・干支）",
+    description: "「○年生まれは今何歳？」「昭和○年は西暦何年？」がすぐわかる。生年月日から満年齢・数え年・干支・次の誕生日まであと何日かを計算。1926年から今年までの年齢一覧つきで、書類の記入にも。",
+    url: "https://novalis-lab.github.io/age-chart/",
+    category: "calc",
+    emoji: "🎂",
+    color: "#5ec4c0",
+    isNew: true,
+  },
+  {
     name: "入学・卒業・入社年 早見表",
     description: "生年月日を入れるだけで、幼稚園から大学・大学院までの入学年と卒業年、新卒入社の年を西暦と和暦で一覧に。浪人・留年・早生まれにも対応。履歴書の学歴欄にそのままコピーできます。",
     url: "https://novalis-lab.github.io/school-years/",
